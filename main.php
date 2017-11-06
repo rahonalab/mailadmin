@@ -17,11 +17,11 @@
 **/
 
 define('db_server','localhost');
-	define('db_name','mailserver');
-	define('db_user','vmail');
-	define('db_pwd','KqvsHM2c73UCq226EaF3uemf');
-	$tbl[1] = 'virtual_aliases';
-	$tbl[2] = 'virtual_users';
+	define('db_name','');
+	define('db_user','');
+	define('db_pwd','');
+	$tbl[1] = 'virtual_aliases'; #change to fit yours
+	$tbl[2] = 'virtual_users';   #change to fit yours
 	$lang = 'en';
 
 			
@@ -213,7 +213,7 @@ else $result = false;
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Amministrazione caselle di posta Sempro</title>
+<title>Amministrazione caselle di posta Rahona.be</title>
  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-15" />
 <style type="text/css">
 <!--
