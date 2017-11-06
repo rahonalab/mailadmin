@@ -17,10 +17,10 @@
 **/
 
 /* Var-Setup */
-	define('db_server','46.226.110.200');
-	define('db_name','mailserver');
-	define('db_user','vmail');
-	define('db_pwd','a8QVa6NKJ7w23XLDcRcL9FvF');
+	define('db_server','');
+	define('db_name','');
+	define('db_user','');
+	define('db_pwd','');
 	$tbl[1] = 'virtual_aliases';
 	$tbl[2] = 'virtual_users';
 	$lang = 'en';
