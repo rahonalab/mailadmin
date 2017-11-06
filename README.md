@@ -9,3 +9,12 @@ Found somewhere on the Internet and still running, with minor modifications, at 
 - Scott Moody (smoody@motechsystems.com)
 - Luigi (luigi@rahona.be)
 
+#features
+
+- quick-and-dirty, one-file main.php web app
+- very simple login page
+- bunch of icons
+
+soon to come:
+
+- rahonalab exclusive graphics
