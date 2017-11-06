@@ -121,7 +121,7 @@ session_start();
 connect();
 $adm_name = $_POST['adm_name'];
 $adm_pass = $_POST['adm_pass'];
-$adm_sql = "SELECT * from virtual_users WHERE email ='$adm_name' AND password = '".base64_encode(pack('H*', md5($adm_password)))."' AND adm='1';";
+$adm_sql = "SELECT * from virtual_users WHERE email ='$adm_name' AND password = '".base64_encode(pack('H*', md5($adm_pass)))."' AND adm='1';";
 
 
 if (!isset($_SESSION['login'])) {
