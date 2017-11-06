@@ -126,7 +126,6 @@ $adm_sql = "SELECT * from virtual_users WHERE email ='$adm_name' AND password = 
 
 if (!isset($_SESSION['login'])) {
 if (mysql_num_rows(query($adm_sql)) < 1) {
-echo $adm_sql;
 echo "Sorry, invalid username and/or password";
 exit;
 }
