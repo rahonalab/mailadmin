@@ -1,4 +1,4 @@
-<?PHP
+<?php
 
 /* NFOs */
 /**
@@ -16,15 +16,15 @@
 *   restrict the access on this file with e.g. htaccess 
 **/
 
-/* Var-Setup */
-	define('db_server','');
-	define('db_name','');
-	define('db_user','');
-	define('db_pwd','');
+define('db_server','localhost');
+	define('db_name','mailserver');
+	define('db_user','vmail');
+	define('db_pwd','KqvsHM2c73UCq226EaF3uemf');
 	$tbl[1] = 'virtual_aliases';
 	$tbl[2] = 'virtual_users';
 	$lang = 'en';
-				
+
+			
 /* Functions */
 function query($sql) {
     global $cid;
@@ -126,6 +126,7 @@ $adm_sql = "SELECT * from virtual_users WHERE email ='$adm_name' AND password = 
 
 if (!isset($_SESSION['login'])) {
 if (mysql_num_rows(query($adm_sql)) < 1) {
+echo $adm_sql;
 echo "Sorry, invalid username and/or password";
 exit;
 }
@@ -252,20 +253,20 @@ a:hover, a:focus {color:#111; text-decoration:underline;}
  }
  function create() {
     mc = {
-     do: '<? echo $do; ?>',
-     sel: '<? echo $sel; ?>',
+     do: '<?php echo $do; ?>',
+     sel: '<?php echo $sel; ?>',
      changeSel: function(sel) {
-        document.location.href = '<? echo '?do='.$do.'&sel=\'+sel+\'&orderby='.$orderby ?>';
+        document.location.href = '<?php echo '?do='.$do.'&sel=\'+sel+\'&orderby='.$orderby ?>';
      },
      togglePwd: function(beh) {
         //var beh = document.getElementById("behindPwd")
         var inp = document.getElementById("pwdInput")
         if (inp.type == 'password') {
 					inp.type = 'text';
-					beh.innerHTML = '<? echoAl('hide password'); ?>';
+					beh.innerHTML = '<?php echoAl('hide password'); ?>';
         } else {
 					inp.type = 'password';
-					beh.innerHTML = '<? echoAl('show password'); ?>';
+					beh.innerHTML = '<?php echoAl('show password'); ?>';
         }
     },
     setDomain: function(val) {
@@ -283,8 +284,8 @@ a:hover, a:focus {color:#111; text-decoration:underline;}
         <h2>Mail Administration</h2>
         <form id="selection" action=""><div>
             <select name="sel_domain" id="sel_domain" onchange="mc.changeSel(this.value)">
-                <option value=""><? echoAl('All') ?></option>
-                <?
+                <option value=""><?php echoAl('All') ?></option>
+                <?php
                     while ($dlist = mysql_fetch_array($fetch_list)) { 
                         if ($dlist['id'] == $sel) echo '        <option value="'. $dlist['id'] .'" selected="selected">'. $dlist['name'] .'</option>';
                         else echo '     <option value="'. $dlist['id'] .'">'. $dlist['name'] .'</option>';
@@ -294,12 +295,12 @@ a:hover, a:focus {color:#111; text-decoration:underline;}
 					</form>
         </div>
         <div id="topLinks">
-<a href="<? echo '?do=1&amp;sel='.$sel ?>" id="aliases_link"><strong><? echoAl('Aliases') ?></strong></a> | <a href="<? echo '?do=2&amp;sel='.$sel ?>" id="user_link"><strong><? echoAl('User') ?></strong></a> | <a href="<? echo '?do=3&amp;sel='.$sel ?>" id="logout"><strong><? echoAl('Logout') ?></strong></a>
+<a href="<?php echo '?do=1&amp;sel='.$sel ?>" id="aliases_link"><strong><?php echoAl('Aliases') ?></strong></a> | <a href="<?php echo '?do=2&amp;sel='.$sel ?>" id="user_link"><strong><?php echoAl('User') ?></strong></a> | <a href="<?php echo '?do=3&amp;sel='.$sel ?>" id="logout"><strong><?php echoAl('Logout') ?></strong></a>
         </div>
     </div>
     <hr />
     <div>
-<?
+<?php
 switch($new) {
     case 1: //New Alias
         $sql = "SELECT id,name FROM virtual_domains WHERE name = '$mydomain';";
