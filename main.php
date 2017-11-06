@@ -12,9 +12,9 @@
 *   Codestyle:      Quick & Dirty ( & Tidied up) (but still works fine ;) )
 *   "Copyrights":   GNU / GPL
 *
-*   Just change the VARs to yout environment (DB) and
-*   restrict the access on this file with e.g. htaccess 
-**/
+*   Just change the VARs to yout environment (DB)*
+*   */
+
 
 define('db_server','localhost');
 	define('db_name','');
